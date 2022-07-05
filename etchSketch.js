@@ -1,10 +1,10 @@
 
-let gridNumber=64;
-let numberOfItems=gridNumber**2;
+let gridNumber=4;
 const gridContainer=document.querySelector('.container');
 
-function addElements(numberOfItems)
+function addElements(gridNumber)
 {
+    let numberOfItems=gridNumber**2;
     let expectedMeasurment=960/gridNumber;
 
     for(let i=1;i<=numberOfItems;i++)
@@ -15,6 +15,9 @@ div.classList.add('grid-div');
 div.setAttribute('id',`${i}`);
 div.style.width=`${expectedMeasurment}px`;
 div.style.height=`${expectedMeasurment}px`;
+div.addEventListener('mouseenter',()=>{
+    div.classList.add('hover');
+});
 gridContainer.appendChild(div);
 }
 
@@ -28,42 +31,33 @@ function clearElements()
   }
 }
 
-addElements(numberOfItems);
+addElements(gridNumber);
 
-/*function changeColor(e)
+function addHoverClass(element)
 {
-this.style.backgroundColor='orange';
-
-
+    element.classList.add('hover');
 }
-*/
+
+
 
 function activateButton(Class)
 {
+    clearElements();
+    
 if(Class==='set') 
 {
-   /* numberOfItems=0;
-    gridNumber=prompt('enter the grid measurements\n this button needs to adjust to delete old divs and create new divs');
-    numberOfItems=gridNumber**2;
-    console.log(gridNumber);
-    grids.forEach(grid=>grid.classList.remove('hover'));
-    clearElements();
-    addElements(numberOfItems);
-    console.log(numberOfItems);
-*/
+    gridNumber=prompt('set the grid size\nenter a value between 1 and 64');
+    if((gridNumber>64)||(gridNumber<1)) 
+    { alert('you have entered an invalid grid value');
+    addElements(16);
+    return;
+    }
+
+}
+addElements(gridNumber);
 }
 
-else if(Class==='clear')
-{
-    grids.forEach(grid=>grid.classList.remove('hover'));
-}
-}
 
-const grids=document.querySelectorAll('.grid-div');
-//grids.forEach(div=>console.log(div.getAttribute(id)));
-grids.forEach(grid=>grid.addEventListener('mouseenter',()=>{
-    grid.classList.add('hover');
-}));
 
 const buttons=document.querySelectorAll('button');
 buttons.forEach(button=>button.addEventListener('click',()=>{
