@@ -23,15 +23,30 @@ display: flex;
 flex-wrap: wrap;
 }
 
-.grid-div{
+/*.grid-div{
 
-    border: 5px black;
+   
     
 
-}
+}*/
 
 .hover
 {
 background-color: black;
+
+}
+
+button
+{
+font-size: 30px;
+font-weight: bold;
+padding: 30px;
+}
+.buttonContainer
+{
+    display: flex;
+    padding: 30px;
+    margin: 50px;
+    gap: 30px;
 
 }
