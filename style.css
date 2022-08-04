@@ -1,3 +1,8 @@
+:root
+{
+--hover-color:#000000;
+
+}
 h1{
     color: rgb(245, 6, 145);
     font-size: 70px;
@@ -10,7 +15,6 @@ body
     background-color: rgb(129, 224, 236);
     text-align: center;
     display: flex;
-    flex-direction: column;
     align-items: center;
     padding:50px;}
 
@@ -31,21 +35,27 @@ flex-wrap: wrap;
 */
 .hover
 {
-background-color: black;
+background-color: var(--hover-color);
 
 }
 
 button
 {
-font-size: 30px;
+font-size: 20px;
 font-weight: bold;
-padding: 30px;
+padding: 20px;
 }
 .buttonContainer
 {
     display: flex;
+    flex-direction: column;
     padding: 30px;
     margin: 50px;
     gap: 30px;
 
+}
+label
+{
+    font: 40px;
+    font-weight: bold;
 }

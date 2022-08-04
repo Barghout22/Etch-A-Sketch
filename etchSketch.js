@@ -58,7 +58,26 @@ addElements(gridNumber);
 }
 
 
+const gridSelector=document.querySelector('#grid-size');
+const gridOutput=document.querySelector('.grid-output');
+gridOutput.textContent=`${gridSelector.value} x ${gridSelector.value}`;
+gridSelector.addEventListener('input',function()
+{
+    gridOutput.textContent=`${gridSelector.value} x ${gridSelector.value}`;
+    clearElements();
+    gridNumber=gridSelector.value;
+    addElements(gridNumber);
+}
+);
 
+const root=document.documentElement;
+const color=document.querySelector('#head');
+color.addEventListener('change',function(){
+    clearElements();
+    addElements(gridNumber);
+    root.style.setProperty('--hover-color',color.value);
+}
+    );
 const buttons=document.querySelectorAll('button');
 buttons.forEach(button=>button.addEventListener('click',()=>{
     activateButton(button.classList.value);

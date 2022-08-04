@@ -7,10 +7,19 @@
   </header>
 
   <body>
-    <h1>Etch A Sketch</h1>
+    
     <div class="buttonContainer">
-        <button class="set">Set Grid measurement</button>
+      <h1>Etch A Sketch</h1>
+      <!--   <button class="set">Set Grid measurement</button> -->
+        <label for="grid-size">Set the grid size</label>
+        <input type="range" name="grid-size" id="grid-size" min="1" max="64" step="1" value="4">
+        <output class= 'grid-output' for="grid-size"></output>
         <button class="clear">Clear Grid</button>
+        <div>
+          <input type="color" id="head" name="head"
+                 value="#000000">
+          <label for="head">grid color</label>
+      </div>
     </div>
         <div class="container">
 
